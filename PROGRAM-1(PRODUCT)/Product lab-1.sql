@@ -82,6 +82,17 @@ insert into participated values('15','KA022333','27','8000');
 insert into participated values('16','KA03355','27','9000');
 commit;
 select *from participated;
+update participated set damage_amount=25000 where reg_num='KA05562' and report_num=24;
+select *from participated;
+commit;
+insert into accident values('28','18-01-2018','Muesuem road');
+select *from accident;
+select count(distinct driver_id) CNT from participated a, accident b where
+a.report_num=b.report_num and b.accident_date like '%08';
+select count(report_num) CNT from car c,participated p where c.reg_num=p.reg_num and
+model='tesla';
+
+
 
 
 
